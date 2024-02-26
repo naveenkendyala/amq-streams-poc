@@ -4,8 +4,15 @@ metadata:
   name: my-cluster
 spec:
   kafka:
-    version: 3.6.0
+    version: 3.6.0    
     replicas: 3
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"    
     listeners:
       - name: plain
         port: 9092
@@ -43,6 +50,13 @@ spec:
           key: kafka-metrics-config.yml
   zookeeper:
     replicas: 3
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"
     readinessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
