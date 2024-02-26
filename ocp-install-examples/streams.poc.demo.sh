@@ -11,7 +11,6 @@
 #### Change Prometheus:: amq-streams-<version>/examples/metrics/prometheus-install/strimzi-service-monitor.yaml
 #### Change Prometheus:: amq-streams-<version>/examples/metrics/prometheus-install/prometheus-rules.yaml
 #### Change Prometheus:: amq-streams-<version>/examples/metrics/prometheus-install/prometheus.yaml
-#04# git clone git clone https://github.com/gpe-mw-training/amq-streams-foundations-labs
 
 #Create New Project
 oc new-project myproject
