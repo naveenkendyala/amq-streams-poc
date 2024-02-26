@@ -16,12 +16,13 @@ spec:
     spec:
       containers:
         - name: java-producer
-          image: quay.io/strimzi-examples/java-kafka-producer:latest
+          image: quay.io/naveenkendyala/kafka-producer:2.6.0
+          imagePullPolicy: Always
           env:
             - name: STRIMZI_TOPIC
               value: demo-topic
             - name: STRIMZI_DELAY_MS
-              value: "5"
+              value: "1"
             - name: STRIMZI_LOG_LEVEL
               value: "INFO"
             - name: STRIMZI_MESSAGE_COUNT

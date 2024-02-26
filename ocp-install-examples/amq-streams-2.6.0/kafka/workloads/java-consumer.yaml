@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: java-consumer
-        image: quay.io/strimzi-examples/java-kafka-consumer:latest
+        image: quay.io/naveenkendyala/kafka-consumer:2.6.0
+        imagePullPolicy: Always
         env:
           - name: STRIMZI_TOPIC
             value: demo-topic
@@ -27,7 +28,7 @@ spec:
           - name: KAFKA_BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9092
           - name: KAFKA_GROUP_ID
-            value: my-java-kafka-consumer
+            value: demo-consumergrp
           - name: KAFKA_KEY_DESERIALIZER
             value: "org.apache.kafka.common.serialization.StringDeserializer"
           - name: KAFKA_VALUE_DESERIALIZER
