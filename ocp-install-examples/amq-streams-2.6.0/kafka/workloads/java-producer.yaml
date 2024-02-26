@@ -21,7 +21,7 @@ spec:
             - name: STRIMZI_TOPIC
               value: demo-topic
             - name: STRIMZI_DELAY_MS
-              value: "1000"
+              value: "5"
             - name: STRIMZI_LOG_LEVEL
               value: "INFO"
             - name: STRIMZI_MESSAGE_COUNT
