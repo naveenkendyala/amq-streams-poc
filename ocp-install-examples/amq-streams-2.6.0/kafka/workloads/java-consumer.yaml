@@ -23,7 +23,7 @@ spec:
           - name: STRIMZI_LOG_LEVEL
             value: "INFO"
           - name: STRIMZI_MESSAGE_COUNT
-            value: "1000000"
+            value: "5000000"
           - name: KAFKA_BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9092
           - name: KAFKA_GROUP_ID
