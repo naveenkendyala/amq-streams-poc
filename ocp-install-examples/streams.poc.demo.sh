@@ -21,7 +21,7 @@ oc new-project myproject
 
 # Create the cluster with [ZooKeeper, Kafka, Kafka Exporter, Entity Operator, Prometheus Metrics]
 # Adjust pv sizes to be smaller (the default is 100 GB)
-oc apply -f ocp-install-examples/amq-streams-2.6.0/kafka/kafka-metrics.yaml
+oc apply -f ocp-install-examples/amq-streams-2.6.0/kafka/kafka-with-metrics-install.yaml
 
 ###Prometheus
 #
