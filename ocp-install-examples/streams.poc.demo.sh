@@ -31,11 +31,11 @@ oc apply -f ocp-install-examples/amq-streams-2.6.0/prometheus/strimzi-pod-monito
 #
 oc apply -f ocp-install-examples/amq-streams-2.6.0/prometheus/prometheus-rules.yaml
 #
-oc apply -f ocp-install-examples/amq-streams-2.6.0/prometheus/prometheus.yaml
+oc apply -f ocp-install-examples/amq-streams-2.6.0/prometheus/prometheus-install.yaml
 
 
 #Install grafana dashboard
-oc apply -f ocp-install-examples/amq-streams-2.6.0/grafana/grafana.yaml
+oc apply -f ocp-install-examples/amq-streams-2.6.0/grafana/grafana-install.yaml
 oc expose svc grafana
 
 #Configure Grafana
@@ -45,9 +45,9 @@ oc expose svc grafana
 
 #On the top left, hover on the "+" icon, and select "Import" and import the following files, one at a time
 #select prometheus as the source when prompted.
-grafana-dashboards/strimzi-kafka-exporter.json
-grafana-dashboards/strimzi-kafka.json
-grafana-dashboards/strimzi-zookeeper.json
+grafana/dashboards/strimzi-kafka-exporter.json
+grafana/dashboards/strimzi-kafka.json
+grafana/dashboards/strimzi-zookeeper.json
 
 #Create a topic
 oc apply -f ocp-install-examples/amq-streams-2.2.0/examples/topic/00.custom.kafka.topic.01.yaml
