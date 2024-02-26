@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: java-producer
+  name: java-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-producer
+  template:
+    metadata:
+      labels:
+        app: java-producer
+    spec:
+      containers:
+        - name: java-producer
+          image: quay.io/strimzi-examples/java-kafka-producer:latest
+          env:
+            - name: STRIMZI_TOPIC
+              value: demo-topic
+            - name: STRIMZI_DELAY_MS
+              value: "1000"
+            - name: STRIMZI_LOG_LEVEL
+              value: "INFO"
+            - name: STRIMZI_MESSAGE_COUNT
+              value: "50000000"
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: my-cluster-kafka-bootstrap:9092
+            - name: KAFKA_ACKS
+              value: "all"
+            - name: KAFKA_KEY_SERIALIZER
+              value: "org.apache.kafka.common.serialization.StringSerializer"
+            - name: KAFKA_VALUE_SERIALIZER
+              value: "org.apache.kafka.common.serialization.StringSerializer"

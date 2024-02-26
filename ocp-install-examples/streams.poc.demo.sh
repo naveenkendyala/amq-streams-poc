@@ -50,10 +50,9 @@ grafana/dashboards/strimzi-kafka.json
 grafana/dashboards/strimzi-zookeeper.json
 
 #Create a topic
-oc apply -f ocp-install-examples/amq-streams-2.2.0/examples/topic/00.custom.kafka.topic.01.yaml
+oc apply -f ocp-install-examples/amq-streams-2.6.0/kafka/topics/demo-topic-config.yaml
 
-
-# The Strimzi kafka exporter dashboard will not who any metrics until you create a producer and a consumer
-# Run the producer and Consumer from the "amq-streams-foundations-labs"
-oc apply -f amq-streams-foundations-labs/01_deploy_and_connect/strimzi-producer.yaml
-oc apply -f amq-streams-foundations-labs/01_deploy_and_connect/strimzi-consumer.yaml
+# The Strimzi kafka exporter dashboard will not show any metrics until you create a producer and a consumer
+# Run the producer and Consumer
+oc apply -f ocp-install-examples/amq-streams-2.6.0/kafka/workloads/java-producer.yaml
+oc apply -f ocp-install-examples/amq-streams-2.6.0/kafka/workloads/java-consumer.yaml
